@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+
+class SoWarehouse(models.Model):
+    _name = "sale.order.line"
+    _inherit = "sale.order.line"
+
+    sowarehouse = fields.Many2one(comodel_name="stock.warehouse", string="Warehouse")
 
 # class vit_so_warehouse(models.Model):
 #     _name = 'vit_so_warehouse.vit_so_warehouse'
